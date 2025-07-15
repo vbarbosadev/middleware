@@ -7,23 +7,11 @@ import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Implementação do padrão Absolute Object Reference.
- *
- * Esta classe contém todas as informações necessárias para encontrar e invocar
- * um metodo de um objeto remoto. Ela é o "valor" no mapa de lookup do nosso Broker.
- */
 public class AbsoluteObjectReference {
 
     private final Object targetObject;
 
     private final Method method;
-
-    /*
-    * Um mapa que armazena informações sobre os parâmetros do metodo para o Marshaller.
-    * Chave: nome do parâmetro na anotação @Param (ex: "a").
-    * Valor: o tipo do parâmetro (ex: int.class).
-    * */
 
     private final Map<String, Class<?>> methodParameters;
 

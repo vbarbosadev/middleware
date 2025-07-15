@@ -10,13 +10,7 @@ import dist.middleware.annotations.HttpMethod;
 import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * Implementação do padrão Lookup.
- *
- * Esta classe é responsável por encontrar e registrar todos os objetos remotos
- * e seus métodos expostos. Ela é o "mapa" que o Broker usará para direcionar
- * as requisições.
- */
+
 public class Lookup {
     private final List<Route> routes = new ArrayList<>();
 
@@ -53,9 +47,7 @@ public class Lookup {
             throw new RuntimeException("Falha ao escanear e registrar objetos remotos.", e);
         }
     }
-    /**
-     * Procura por uma rota que corresponda à requisição.
-     */
+
     public RouteMatchResult lookup(HttpMethod httpMethod, String requestPath) {
         for (Route route : routes) {
             RouteMatchResult result = route.match(httpMethod, requestPath);

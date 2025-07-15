@@ -7,11 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.Executors;
 
-/**
- * Implementação do padrão Server Request Handler usando Sockets TCP.
- * Responsável por criar um ServerSocket, aguardar conexões de clientes
- * e delegar cada conexão para um ClientHandler em uma nova thread.
- */
+
 public class ServerRequestHandler {
 
     private final int port;
@@ -22,9 +18,7 @@ public class ServerRequestHandler {
         this.broker = broker;
     }
 
-    /**
-     * Inicia o servidor TCP.
-     */
+
     public void start() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Servidor TCP aguardando conexões na porta " + port);

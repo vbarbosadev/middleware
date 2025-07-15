@@ -1,6 +1,6 @@
 package dist.bancoApplication;
 
-import dist.middleware.runner.MiddlewareRunner;
+import dist.middleware.MiddlewareRunner;
 
 public class Main {
     public static void main(String[] args) {

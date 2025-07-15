@@ -8,10 +8,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Representa um padrão de rota, como "/contas/{numero}".
- * Sabe como fazer a correspondência com uma URL de requisição real.
- */
+
 public class Route {
     private final HttpMethod httpMethod;
     private final AbsoluteObjectReference aor;

@@ -21,19 +21,17 @@
     </properties>
 
     <dependencies>
-        <!--
-            Esta é uma dependência chave!
-            A biblioteca 'Reflections' facilita muito o trabalho de encontrar todas as classes
-            em um determinado pacote que possuem uma anotação específica (como @RemoteObject).
-            Isso será essencial para a implementação do seu LookupService.
-        -->
+
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.10.2</version>
         </dependency>
-
-        <!-- Dependências para testes (Opcional, mas altamente recomendado) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.13.1</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
