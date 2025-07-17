@@ -7,10 +7,10 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PARAMETER)
-public @interface Param {
-
+public @interface Path {
     /**
-     * O nome do parâmetro na URL (ex: em /soma?a=5, o nome é "a").
+     * O nome da variável no caminho da URL.
+     * Deve corresponder ao nome entre chaves no @MethodMapping.
      */
     String name();
 }

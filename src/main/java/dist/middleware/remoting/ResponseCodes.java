@@ -1,6 +1,5 @@
-package dist.middleware.broker;
+package dist.middleware.remoting;
 
-import dist.middleware.remoting.HttpResponse;
 
 public class ResponseCodes {
 
@@ -11,10 +10,6 @@ public class ResponseCodes {
 
     public static ResponseCodes getInstance() { return instance; }
 
-    /**
-     * Inicia o framework de middleware.
-     * @param responseBody corpo da resposta da aplicação, para pegar o codigo de resposta e a menssagem
-     */
     public HttpResponse getHttpResponse(String responseBody) {
         String[] parts = responseBody.split(":", 2);
         int statusCode = Integer.parseInt(parts[0]);
@@ -22,11 +17,7 @@ public class ResponseCodes {
         return searchCode(statusCode, message);
     }
 
-    /**
-     * Inicia o framework de middleware.
-     * @param statusCode codigo de resposta da aplicação
-     * @param message mensagem de resposta da aplicação.
-     */
+
     public HttpResponse searchCode(int statusCode, String message) {
         return switch (statusCode) {
             case 400 -> new HttpResponse(400, "Bad Request", message);

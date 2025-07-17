@@ -1,15 +1,11 @@
 package dist.middleware.broker;
 
 import dist.middleware.annotations.HttpMethod;
-import dist.middleware.identifications.AbsoluteObjectReference;
 import dist.middleware.remoting.HttpResponse;
 import dist.middleware.identifications.Lookup;
 import dist.middleware.remoting.Invoker;
 import dist.middleware.remoting.Marshaller;
 import dist.middleware.remoting.RouteMatchResult;
-
-import java.net.http.HttpRequest;
-import java.util.Arrays;
 
 
 public class Broker {
@@ -23,7 +19,6 @@ public class Broker {
         this.invoker = new Invoker();
     }
 
-    // Assinatura do método atualizada para incluir o requestBody
     public HttpResponse process(String httpMethodStr, String path, String query, String requestBody) {
         HttpMethod httpMethod;
         try {
@@ -39,7 +34,6 @@ public class Broker {
         }
 
         try {
-            // Passa o requestBody para o Marshaller
             Object[] arguments = marshaller.unmarshall(query, requestBody, routeResult.pathVariables(), routeResult.aor());
             Object result = invoker.invoke(routeResult.aor(), arguments);
             String responseBody = marshaller.marshall(result);

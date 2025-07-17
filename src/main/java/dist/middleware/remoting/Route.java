@@ -27,12 +27,6 @@ public class Route {
         this.pattern = Pattern.compile("^" + regex + "$");
     }
 
-    /**
-     * Tenta fazer a correspondência desta rota com a URL da requisição.
-     * @param requestMethod O método HTTP da requisição.
-     * @param requestPath O caminho da URL da requisição.
-     * @return Um RouteMatchResult se a correspondência for bem-sucedida, caso contrário, null.
-     */
     public RouteMatchResult match(HttpMethod requestMethod, String requestPath) {
         if (this.httpMethod != requestMethod) {
             return null;

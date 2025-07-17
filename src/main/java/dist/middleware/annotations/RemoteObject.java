@@ -9,11 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface RemoteObject {
 
-    /**
-     * Define um "caminho base" para todos os endpoints dentro desta classe.
-     * Ex: se value() for "/calculator", e um @MethodMapping tiver path="/soma",
-     * o caminho final será "/calculator/soma".
-     * @return O caminho base da URL.
-     */
+
     String value() default "";
 }
